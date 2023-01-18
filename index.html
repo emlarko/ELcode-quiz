@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+</head>
+<body>
+    <header>
+            <h1><a href="highscore.html">Highscores</a></h1>
+            <h1><div class="time"></class></div></h1>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <div class="container">
+                <div id="content">
+                    <h1>Coding Quiz Challenge</h1>
+                    <p>Try to answer the following code-related questions within the time limit. 
+                    Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+                    </p>
+                </div>
+                <button id="start">Start Quiz</button>
+        <div id="quiz">
+            <div id="question"></div>
+            <div id="choice">
+                    <button class="choice" id="1"></button>
+                    <button class="choice" id="2" ></button>
+                    <button class="choice" id="3" ></button>
+                    <button class="choice" id="4"></button>
+            </div>
+            <div id ="answer"></div>
+            </div>
+        <div id="score">
+            <div id="final-score"></div>
+            <form id="initials" method="POST">
+                <label for="initials-text">Add your initials: </label>
+                <input type="text" placeholder="Initials" name="initials-text" id="initials-text" />
+                <button id="submit">Submit</button>
+                <div id="test"></div>
+            </form>
+        </div>
+        
+            </div>
+        </div>
+    </main>
+
+    <script async src="assets/js/script.js"></script>
+</body>
+</html>
