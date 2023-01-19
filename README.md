@@ -1,34 +1,21 @@
-# ELcode-quiz
-# 04 Web APIs: Code Quiz
+# Code Quiz
 
-## Your Task
+## Description 
 
-At some point in your journey to become a full-stack web developer, you’ll likely be asked to complete a coding assessment&mdash;perhaps as part of an interview process. A typical coding assessment includes both multiple-choice questions and interactive coding challenges. 
+The aim of this project was to create a timed, multiple-choice coding quiz which runs in the browser.
 
-To help familiarize you with these tests and allow you to use the skills covered in this module, this Challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. 
+## Usage 
 
-This week’s coursework will equip you with all the skills you need to succeed in this assignment.
+When the 'Start Quiz' button is clicked, the user is presented with the first question and a 60 second timer starts. 
 
-## User Story
+When an answer is selected, the app will tell the user if the answer is correct and move on to the next question. If the answer was correct, the user is awarded 10 points. If the answer was wrong, ten seconds is deducted from the timer. 
 
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+At the end of the quiz, the timer stops and the user is shown their score and is prompted to enter their initials. The quiz will also end if the timer reaches zero. 
 
-## Acceptance Criteria
+When the user submits their initials with their high score, they are redirected to the high score page. They have the option to go back to the quiz, and to clear the high scores. 
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
-```
+**GitHub Page:** 
+
+https://emlarko.github.io/ELcode-quiz/index.html
+
+![Screenshot](assets/images/screenshot.png?raw=true "Screenshot")

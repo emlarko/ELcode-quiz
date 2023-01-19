@@ -1,6 +1,8 @@
 var highscores = document.getElementById("highscores");
 var clearScores = document.getElementById("clear");
 
+var scores = [];
+
 window.onload = function() {
     var storedScores = JSON.parse(localStorage.getItem("scores"));
         
@@ -16,7 +18,7 @@ function renderScores() {
   highscores.innerHTML = "";
 
   // Render a new li for each score
-  for (var i = 0; i < scores.length; i++) {
+   for (var i = 0; i < scores.length; i++) {
     var score = scores[i];
 
     var li = document.createElement("li");
@@ -25,7 +27,7 @@ function renderScores() {
 
     highscores.appendChild(li);
   }
-}
+ }
 
 clearScores.addEventListener("click", function() {
     highscores.innerHTML = "";

@@ -33,7 +33,7 @@ const questions = [
         choice2: "2. other arrays",
         choice3: "3. booleans",
         choice4: "4. all of the above",
-        correctAnswer: choice4
+        correctAnswer: choice
     },
     {
         question: "The condition in an if / else statement is enclosed within _____.",
@@ -104,13 +104,14 @@ function storeScores() {
     localStorage.setItem("scores", JSON.stringify(scores));
 };    
 
-submitBtn.addEventListener("click", function(event) {
-    location.href = "highscore.html";
-    event.preventDefault();
-    var scoreText = initialsInput.value + " " + scoreCount;
-    scores.push(scoreText);
-    storeScores();
-});
+if (initialsInput !== "") 
+    submitBtn.addEventListener("click", function(event) {
+        location.href = "highscore.html";
+        event.preventDefault();
+        var scoreText = initialsInput.value + " " + scoreCount;
+        scores.push(scoreText);
+        storeScores();
+    });
 
 function endQuiz() {
     quiz.style.display = "none";
