@@ -18,6 +18,7 @@ var initialsInput = document.getElementById("initials-text");
 
 var secondsLeft = 60;
 
+//Array of questions and answers
 const questions = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -65,6 +66,7 @@ var i = 0;
 var scoreCount = 0
 let q = questions[i];
 
+// Renders the questions and answers to the page
 function renderQuestions() {
     question.textContent = q.question;
     choice1.textContent = q.choice1;
@@ -73,10 +75,13 @@ function renderQuestions() {
     choice4.textContent = q.choice4;
 }
 
+
+// Turns the answer node list into an array
 let answerArr = Array.from(answer)
 
 answerArr.forEach(answer => answer.addEventListener("click", checkAnswer));
 
+// Checks the given answer against the correct answer when each answer button is clicked
 function checkAnswer(event) {
     var correct = q.correctAnswer;
     console.log(correct);
@@ -94,25 +99,27 @@ function checkAnswer(event) {
     }
     else {
         q = questions[i]
+        // The JavaScript was loading too quickly, matching the current question to
+        // next answer
         setTimeout(renderQuestions, 200)
     }
 };
 
-var scores = [];
+var scores = JSON.parse(localStorage.getItem('scores')) || [];
 
-function storeScores() {
-    localStorage.setItem("scores", JSON.stringify(scores));
-};    
+// Stores the scores as an array in local storage
 
 if (initialsInput !== "") 
     submitBtn.addEventListener("click", function(event) {
+        // Redirects to the highscore page
         location.href = "highscore.html";
         event.preventDefault();
         var scoreText = initialsInput.value + " " + scoreCount;
         scores.push(scoreText);
-        storeScores();
+        localStorage.setItem('scores', JSON.stringify(scores))
     });
 
+// Displays the final score and stops the time after the last question has been answered    
 function endQuiz() {
     quiz.style.display = "none";
     score.style.display = "block";
@@ -128,7 +135,7 @@ function setTime() {
         secondsLeft--;
         timeEl.textContent = secondsLeft + " seconds left";
         if (secondsLeft === 0) {
-            // Stops execution of action at set interval
+            // Ends the quiz when the timer reaches zero
             endQuiz();
         }
 
